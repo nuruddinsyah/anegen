@@ -1,0 +1,41 @@
+{
+	"service": {
+		"name": "normalisation",
+		"description": "Microarray Data Normalisation",
+		
+		"sequences": [
+			"generate_id",
+			"perform_normalisation",
+			"get_status"
+		],
+		
+		"tasks": [
+			{
+				"id": "generate_id",
+				"input": [],
+				"output": [
+					{"name": "generated_id", "type": "string"}
+				]
+			},
+			{
+				"id": "perform_normalisation",
+				"input": [
+					{"name": "identifier", "type": "string"},
+					{"name": "filename", "type": "string"},
+					{"name": "method", "type": "string"}
+				],
+				"output": []
+			},
+			{
+				"id": "get_status",
+				"input": [
+					{"name": "identifier", "type": "string"}
+				],
+				"output": [
+					{"name": "status", "type": "string"},
+					{"name": "result_table", "type": "file"}
+				]
+			}
+		]
+	}
+}

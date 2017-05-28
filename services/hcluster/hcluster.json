@@ -1,0 +1,45 @@
+{
+	"service": {
+		"name": "hcluster",
+		"description": "Hierarchical Clustering Data Microarray",
+		
+		"sequences": [
+			"generate_id",
+			"perform_cluster",
+			"get_status",
+			"get_result_table",
+			"get_result_image"
+		],
+		
+		"tasks": [
+			{
+				"id": "generate_id",
+				"input": [],
+				"output": [
+					{"name": "generated_id", "type": "string"}
+				]
+			},
+			{
+				"id": "perform_cluster",
+				"input": [
+					{"name": "identifier", "type": "string"},
+					{"name": "filename", "type": "string"},
+					{"name": "clustering_method", "type": "string"},
+					{"name": "distance_measure", "type": "string"}
+				],
+				"output": []
+			},
+			{
+				"id": "get_status",
+				"input": [
+					{"name": "identifier", "type": "string"}
+				],
+				"output": [
+					{"name": "status", "type": "string"},
+					{"name": "result_table", "type": "file"},
+					{"name": "result_image", "type": "file"}
+				]
+			}
+		]
+	}
+}
